@@ -10,25 +10,16 @@ export interface PaymentSheetDefinitions {
     paymentResult: PaymentSheetResultInterface;
   }>;
 
-  addListener(
-    eventName: PaymentSheetEventsEnum.Loaded,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentSheetEventsEnum.Loaded, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   addListener(
     eventName: PaymentSheetEventsEnum.FailedToLoad,
     listenerFunc: (error: string) => void,
   ): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: PaymentSheetEventsEnum.Completed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentSheetEventsEnum.Completed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: PaymentSheetEventsEnum.Canceled,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentSheetEventsEnum.Canceled, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   addListener(
     eventName: PaymentSheetEventsEnum.Failed,

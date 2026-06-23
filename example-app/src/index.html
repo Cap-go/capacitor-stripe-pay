@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>@capgo/capacitor-stripe Demo</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #0b1220; color: #e8eefc; }
+      main { max-width: 720px; margin: 0 auto; }
+      section { margin: 24px 0; padding: 16px; border: 1px solid #24304a; border-radius: 12px; background: #111a2e; }
+      label { display: block; margin: 12px 0 6px; font-weight: 600; }
+      textarea, input { width: 100%; box-sizing: border-box; border-radius: 8px; border: 1px solid #334466; background: #0d1528; color: #e8eefc; padding: 10px; }
+      button { margin-top: 12px; padding: 10px 14px; border-radius: 8px; border: 0; background: #635bff; color: white; font-weight: 600; cursor: pointer; }
+      pre { white-space: pre-wrap; word-break: break-word; background: #0d1528; padding: 12px; border-radius: 8px; }
+      a { color: #9aa7ff; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>@capgo/capacitor-stripe Demo</h1>
+      <p>
+        Stripe Payment Sheet, Apple Pay, and Google Pay. For subscriptions and in-app purchases, use
+        <a href="https://capgo.app/docs/plugins/native-purchases/">@capgo/native-purchases</a> instead.
+      </p>
+
+      <section>
+        <h2>Initialize</h2>
+        <label for="publishableKey">Publishable key</label>
+        <input id="publishableKey" value="pk_test_replace_me" />
+        <label for="stripeAccount">Stripe account (optional, Connect)</label>
+        <input id="stripeAccount" placeholder="acct_..." />
+        <button id="initializeButton" type="button">Initialize</button>
+      </section>
+
+      <section>
+        <h2>Payment Sheet</h2>
+        <label for="paymentSheetOptions">createPaymentSheet options (JSON)</label>
+        <textarea id="paymentSheetOptions" rows="12">{
+  "paymentIntentClientSecret": "pi_replace_me_secret_replace_me",
+  "merchantDisplayName": "Capgo Stripe Demo",
+  "customerId": "",
+  "customerEphemeralKeySecret": "",
+  "enableApplePay": false,
+  "enableGooglePay": false,
+  "countryCode": "US"
+}</textarea>
+        <button id="createPaymentSheetButton" type="button">Create Payment Sheet</button>
+        <button id="presentPaymentSheetButton" type="button">Present Payment Sheet</button>
+      </section>
+
+      <section>
+        <h2>Output</h2>
+        <p id="statusLine">Status: Idle</p>
+        <pre id="outputLog">Awaiting interaction.</pre>
+      </section>
+    </main>
+    <script src="./js/example.js" type="module"></script>
+  </body>
+</html>

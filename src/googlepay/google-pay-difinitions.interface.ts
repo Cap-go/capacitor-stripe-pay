@@ -13,28 +13,16 @@ export interface GooglePayDefinitions {
     paymentResult: GooglePayResultInterface;
   }>;
 
-  addListener(
-    eventName: GooglePayEventsEnum.Loaded,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: GooglePayEventsEnum.Loaded, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   addListener(
     eventName: GooglePayEventsEnum.FailedToLoad,
     listenerFunc: (error: string) => void,
   ): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: GooglePayEventsEnum.Completed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: GooglePayEventsEnum.Completed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: GooglePayEventsEnum.Canceled,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: GooglePayEventsEnum.Canceled, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: GooglePayEventsEnum.Failed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: GooglePayEventsEnum.Failed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 }

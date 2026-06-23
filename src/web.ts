@@ -36,7 +36,6 @@ export class StripeWeb extends WebPlugin implements StripePlugin {
     modal.style.opacity = '1';
   }
 
-
   private publishableKey: string | undefined;
   private stripeAccount: string | undefined;
   private cardElementModal: StripeCardElementModal | undefined;
@@ -352,7 +351,8 @@ export class StripeWeb extends WebPlugin implements StripePlugin {
       }
 
       const googlePayOptions = requestButtonOptions as CreateGooglePayOption;
-      const requiresShipping = type === 'googlePay' && (googlePayOptions.requiredShippingContactFields?.includes('postalAddress') ?? false);
+      const requiresShipping =
+        type === 'googlePay' && (googlePayOptions.requiredShippingContactFields?.includes('postalAddress') ?? false);
 
       await requestButton.setPaymentRequestOption({
         country: requestButtonOptions.countryCode!.toUpperCase(),
