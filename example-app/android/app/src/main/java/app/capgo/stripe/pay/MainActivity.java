@@ -1,4 +1,4 @@
-package app.capgo.stripe;
+package app.capgo.stripe.pay;
 
 import com.getcapacitor.BridgeActivity;
 
