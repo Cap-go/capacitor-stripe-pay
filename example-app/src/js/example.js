@@ -1,6 +1,6 @@
 import { CapacitorUpdater } from '@capgo/capacitor-updater';
 import { Capacitor } from '@capacitor/core';
-import { Stripe } from '@capgo/capacitor-stripe';
+import { Stripe } from '@capgo/capacitor-stripe-pay';
 
 const publishableKeyInput = document.getElementById('publishableKey');
 const stripeAccountInput = document.getElementById('stripeAccount');
