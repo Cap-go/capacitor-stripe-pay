@@ -10,33 +10,21 @@ export interface PaymentFlowDefinitions {
     cardNumber: string;
   }>;
   confirmPaymentFlow(): Promise<{
-    paymentResult: PaymentFlowResultInterface
+    paymentResult: PaymentFlowResultInterface;
   }>;
 
-  addListener(
-    eventName: PaymentFlowEventsEnum.Loaded,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentFlowEventsEnum.Loaded, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   addListener(
     eventName: PaymentFlowEventsEnum.FailedToLoad,
     listenerFunc: (error: string) => void,
   ): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: PaymentFlowEventsEnum.Opened,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentFlowEventsEnum.Opened, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: PaymentFlowEventsEnum.Completed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentFlowEventsEnum.Completed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
-  addListener(
-    eventName: PaymentFlowEventsEnum.Canceled,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: PaymentFlowEventsEnum.Canceled, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   addListener(
     eventName: PaymentFlowEventsEnum.Failed,
@@ -45,8 +33,6 @@ export interface PaymentFlowDefinitions {
 
   addListener(
     eventName: PaymentFlowEventsEnum.Created,
-    listenerFunc: (info: {
-      cardNumber: string;
-    }) => void,
+    listenerFunc: (info: { cardNumber: string }) => void,
   ): Promise<PluginListenerHandle>;
 }

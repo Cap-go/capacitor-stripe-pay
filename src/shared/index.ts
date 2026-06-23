@@ -72,10 +72,10 @@ interface BillingDetailsCollectionConfiguration {
   /**
    * Configuration for how billing details are collected during checkout.
    */
-  email?: CollectionMode,
-  name?: CollectionMode,
-  phone?: CollectionMode,
-  address?: AddressCollectionMode
+  email?: CollectionMode;
+  name?: CollectionMode;
+  phone?: CollectionMode;
+  address?: AddressCollectionMode;
 }
 
 export interface BasePaymentOption {
@@ -176,7 +176,7 @@ export interface BasePaymentOption {
    * Show ZIP code field.
    * @default true
    */
-  withZipCode?: boolean
+  withZipCode?: boolean;
 
   /**
    * use GooglePay.

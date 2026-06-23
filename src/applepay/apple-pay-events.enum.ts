@@ -1,13 +1,13 @@
 export enum ApplePayEventsEnum {
-  Loaded = "applePayLoaded",
-  FailedToLoad = "applePayFailedToLoad",
-  Completed = "applePayCompleted",
-  Canceled = "applePayCanceled",
-  Failed = "applePayFailed",
-  DidSelectShippingContact = "applePayDidSelectShippingContact",
-  DidCreatePaymentMethod = "applePayDidCreatePaymentMethod",
+  Loaded = 'applePayLoaded',
+  FailedToLoad = 'applePayFailedToLoad',
+  Completed = 'applePayCompleted',
+  Canceled = 'applePayCanceled',
+  Failed = 'applePayFailed',
+  DidSelectShippingContact = 'applePayDidSelectShippingContact',
+  DidCreatePaymentMethod = 'applePayDidCreatePaymentMethod',
 }
-export type  ApplePayResultInterface =
+export type ApplePayResultInterface =
   | ApplePayEventsEnum.Completed
   | ApplePayEventsEnum.Canceled
   | ApplePayEventsEnum.Failed
