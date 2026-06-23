@@ -1,4 +1,4 @@
-package app.capgo.stripe.helper
+package app.capgo.stripe.pay.helper
 
 import com.getcapacitor.JSObject
 import com.stripe.android.paymentsheet.PaymentSheet

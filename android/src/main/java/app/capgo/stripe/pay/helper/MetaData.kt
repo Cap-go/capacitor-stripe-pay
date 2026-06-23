@@ -1,4 +1,4 @@
-package app.capgo.stripe.helper
+package app.capgo.stripe.pay.helper
 
 import android.content.Context
 import android.content.pm.PackageManager

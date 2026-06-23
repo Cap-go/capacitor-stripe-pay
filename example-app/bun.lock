@@ -9,7 +9,7 @@
         "@capacitor/core": "^8.0.0",
         "@capacitor/ios": "^8.0.0",
         "@capacitor/splash-screen": "^8.0.0",
-        "@capgo/capacitor-stripe": "file:..",
+        "@capgo/capacitor-stripe-pay": "file:..",
         "@capgo/capacitor-updater": "^8.45.11",
         "@stripe/stripe-js": "^8.11.0",
         "react": "^18.3.1",
@@ -41,7 +41,7 @@
 
     "@capacitor/splash-screen": ["@capacitor/splash-screen@8.0.1", "", { "peerDependencies": { "@capacitor/core": ">=8.0.0" } }, "sha512-c/ew/Z3eA7z8l06WoRAtzVF16VwYYrExmHmfGq1Cg675pVzaC/yuucB8/1xG1vhEfnW4fZ1KhSf/kzR1RiVYgg=="],
 
-    "@capgo/capacitor-stripe": ["@capgo/capacitor-stripe@file:..", { "devDependencies": { "@capacitor/android": "^8.0.0", "@capacitor/core": "^8.0.0", "@capacitor/docgen": "^0.3.1", "@capacitor/ios": "^8.0.0", "@ionic/eslint-config": "^0.4.0", "@ionic/prettier-config": "^4.0.0", "@ionic/swiftlint-config": "^2.0.0", "@types/node": "^24.10.1", "@types/react": "^16.14.3", "@typescript-eslint/eslint-plugin": "^5.27.1", "eslint": "^8.57.1", "prettier": "^3.6.2", "prettier-plugin-java": "^2.7.7", "rimraf": "^6.1.0", "rollup": "^4.53.2", "swiftlint": "^2.0.0", "typescript": "^5.9.3" }, "peerDependencies": { "@capacitor/core": ">=8.0.0", "@stripe/stripe-js": "^8.4.0", "react": "^17.0.0 || ^18.0.0", "stripe-pwa-elements": "^3.0.0" } }],
+    "@capgo/capacitor-stripe-pay": ["@capgo/capacitor-stripe-pay@file:..", { "devDependencies": { "@capacitor/android": "^8.0.0", "@capacitor/core": "^8.0.0", "@capacitor/docgen": "^0.3.1", "@capacitor/ios": "^8.0.0", "@ionic/eslint-config": "^0.4.0", "@ionic/prettier-config": "^4.0.0", "@ionic/swiftlint-config": "^2.0.0", "@types/node": "^24.10.1", "@types/react": "^16.14.3", "@typescript-eslint/eslint-plugin": "^5.27.1", "eslint": "^8.57.1", "eslint-plugin-import": "^2.31.0", "prettier": "^3.6.2", "prettier-plugin-java": "^2.7.7", "prettier-pretty-check": "^0.2.0", "rimraf": "^6.1.0", "rollup": "^4.53.2", "swiftlint": "^2.0.0", "typescript": "^5.9.3" }, "peerDependencies": { "@capacitor/core": ">=8.0.0", "@stripe/stripe-js": "^8.4.0", "react": "^17.0.0 || ^18.0.0", "stripe-pwa-elements": "^3.0.0" } }],
 
     "@capgo/capacitor-updater": ["@capgo/capacitor-updater@8.49.7", "", { "peerDependencies": { "@capacitor/core": "^8.0.0" } }, "sha512-zewMYUiiSMxn4CB3yF0y7gB/I8fks06vXdhq3bRwmFFW/nwtgi37uGYgfn5x5PmURWbLfI43ds6wKE/D/4SFAg=="],
 
@@ -328,6 +328,8 @@
     "define-lazy-prop": ["define-lazy-prop@2.0.0", "", {}, "sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og=="],
 
     "define-properties": ["define-properties@1.2.1", "", { "dependencies": { "define-data-property": "^1.0.1", "has-property-descriptors": "^1.0.0", "object-keys": "^1.1.1" } }, "sha512-8QmQKqEASLd5nx0U1B1okLElbUuuttJ/AnYmRXbbbGDWh6uS208EjD4Xqq/I9wK7u0v6O08XhTWnt5XtEbR6Dg=="],
+
+    "diff": ["diff@5.2.2", "", {}, "sha512-vtcDfH3TOjP8UekytvnHH1o1P4FcUdt4eQ1Y+Abap1tk/OB2MWQvcwS2ClCd1zuIhc3JKOx6p3kod8Vfys3E+A=="],
 
     "dir-glob": ["dir-glob@3.0.1", "", { "dependencies": { "path-type": "^4.0.0" } }, "sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA=="],
 
@@ -670,6 +672,8 @@
     "prettier": ["prettier@3.8.4", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q=="],
 
     "prettier-plugin-java": ["prettier-plugin-java@2.10.0", "", { "dependencies": { "web-tree-sitter": "0.26.9" }, "peerDependencies": { "prettier": "^3.0.0" } }, "sha512-lDmVgJU/TCBri3kITMcNyr712Ac5Totb1fOp9GW1KCUdv4SsPfbFP7I+mUdRFEoPzE72ymf8MOgIsd/v0yA9CA=="],
+
+    "prettier-pretty-check": ["prettier-pretty-check@0.2.0", "", { "dependencies": { "diff": "^5.2.0" }, "bin": { "prettier-pretty-check": "index.js" } }, "sha512-gVmwxYvm1Qii1H6eULNcNchlruyXyKkluP1LBhUaqdSvvACc8FZ99zTWzqQHJrBu9qUrYmNRysPmnYSm9c7G6Q=="],
 
     "prompts": ["prompts@2.4.2", "", { "dependencies": { "kleur": "^3.0.3", "sisteransi": "^1.0.5" } }, "sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q=="],
 

@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapgoCapacitorStripe",
+    name: "CapgoCapacitorStripePay",
     platforms: [.iOS(.v15)],
     products: [
         .library(
-            name: "CapgoCapacitorStripe",
+            name: "CapgoCapacitorStripePay",
             targets: ["StripePlugin"])
     ],
     dependencies: [

@@ -1,4 +1,4 @@
-package app.capgo.stripe
+package app.capgo.stripe.pay
 
 import android.content.ContentResolver
 import android.net.Uri
@@ -8,10 +8,10 @@ import com.getcapacitor.annotation.CapacitorPlugin
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
-import app.capgo.stripe.googlepay.GooglePayExecutor
-import app.capgo.stripe.helper.MetaData
-import app.capgo.stripe.paymentflow.PaymentFlowExecutor
-import app.capgo.stripe.paymentsheet.PaymentSheetExecutor
+import app.capgo.stripe.pay.googlepay.GooglePayExecutor
+import app.capgo.stripe.pay.helper.MetaData
+import app.capgo.stripe.pay.paymentflow.PaymentFlowExecutor
+import app.capgo.stripe.pay.paymentsheet.PaymentSheetExecutor
 import com.stripe.android.PaymentConfiguration
 import com.stripe.android.Stripe
 import com.stripe.android.core.AppInfo
@@ -206,6 +206,6 @@ class StripePlugin : Plugin() {
     }
 
     companion object {
-        private const val APP_INFO_NAME = "@capgo/capacitor-stripe"
+        private const val APP_INFO_NAME = "@capgo/capacitor-stripe-pay"
     }
 }

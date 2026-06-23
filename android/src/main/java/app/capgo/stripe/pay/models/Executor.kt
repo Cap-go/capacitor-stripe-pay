@@ -1,4 +1,4 @@
-package app.capgo.stripe.models
+package app.capgo.stripe.pay.models
 
 import android.app.Activity
 import android.content.Context

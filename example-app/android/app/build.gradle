@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "app.capgo.stripe"
+    namespace = "app.capgo.stripe.pay"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId = "app.capgo.stripe"
+        applicationId = "app.capgo.stripe.pay"
         minSdkVersion = rootProject.ext.minSdkVersion
         targetSdkVersion = rootProject.ext.targetSdkVersion
         versionCode = 1

@@ -1,7 +1,7 @@
 {
-  "name": "capacitor-stripe-example",
+  "name": "capacitor-stripe-pay-example",
   "version": "1.0.0",
-  "description": "@capgo/capacitor-stripe Demo",
+  "description": "@capgo/capacitor-stripe-pay Demo",
   "type": "module",
   "keywords": [
     "capacitor",
@@ -18,7 +18,7 @@
     "@capacitor/ios": "^8.0.0",
     "@capacitor/android": "^8.0.0",
     "@capacitor/splash-screen": "^8.0.0",
-    "@capgo/capacitor-stripe": "file:..",
+    "@capgo/capacitor-stripe-pay": "file:..",
     "react": "^18.3.1",
     "stripe-pwa-elements": "^3.2.0",
     "@stripe/stripe-js": "^8.11.0",

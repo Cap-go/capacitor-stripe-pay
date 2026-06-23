@@ -1,5 +1,5 @@
 {
-  "name": "@capgo/capacitor-stripe",
+  "name": "@capgo/capacitor-stripe-pay",
   "version": "8.0.1",
   "engines": {
     "node": ">=22.0.0"
@@ -27,28 +27,29 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapgoCapacitorStripe.podspec"
+    "CapgoCapacitorStripePay.podspec"
   ],
   "author": "Martin Donadieu <martin@capgo.app>",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cap-go/capacitor-stripe.git"
+    "url": "git+https://github.com/Cap-go/capacitor-stripe-pay.git"
   },
   "bugs": {
-    "url": "https://github.com/Cap-go/capacitor-stripe/issues"
+    "url": "https://github.com/Cap-go/capacitor-stripe-pay/issues"
   },
   "keywords": [
     "capacitor",
     "plugin",
     "stripe",
-    "payment",
+    "payment-sheet",
     "apple-pay",
-    "google-pay"
+    "google-pay",
+    "native"
   ],
   "scripts": {
     "verify": "bun run verify:ios && bun run verify:android && bun run verify:web",
-    "verify:ios": "xcodebuild -scheme CapgoCapacitorStripe -destination generic/platform=iOS",
+    "verify:ios": "xcodebuild -scheme CapgoCapacitorStripePay -destination generic/platform=iOS",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "bun run build",
     "lint": "bun run eslint && bun run prettier -- --check && bun run swiftlint -- lint",
@@ -108,5 +109,5 @@
       "src": "android"
     }
   },
-  "homepage": "https://capgo.app/docs/plugins/stripe/"
+  "homepage": "https://capgo.app/docs/plugins/stripe-pay/"
 }
