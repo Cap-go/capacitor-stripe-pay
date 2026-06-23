@@ -1,4 +1,4 @@
-package app.capgo.stripe.paymentsheet;
+package app.capgo.stripe.pay.paymentsheet;
 
 enum class PaymentSheetEvents(val webEventName: String) {
     Loaded("paymentSheetLoaded"),

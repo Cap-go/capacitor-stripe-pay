@@ -1,4 +1,4 @@
-package app.capgo.stripe.googlepay;
+package app.capgo.stripe.pay.googlepay;
 
 enum class GooglePayEvents(val webEventName: String) {
     Loaded("googlePayLoaded"),

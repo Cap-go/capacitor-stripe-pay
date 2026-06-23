@@ -76,7 +76,7 @@ export class StripeWeb extends WebPlugin implements StripePlugin {
       this.cardElementModal.stripeAccount = this.stripeAccount;
     }
 
-    this.cardElementModal.applicationName = '@capgo/capacitor-stripe';
+    this.cardElementModal.applicationName = '@capgo/capacitor-stripe-pay';
 
     this.cardElementModal.intentClientSecret = options.paymentIntentClientSecret;
     this.cardElementModal.intentType = 'payment';
@@ -154,7 +154,7 @@ export class StripeWeb extends WebPlugin implements StripePlugin {
       this.cardElementModal.stripeAccount = this.stripeAccount;
     }
 
-    this.cardElementModal.applicationName = '@capgo/capacitor-stripe';
+    this.cardElementModal.applicationName = '@capgo/capacitor-stripe-pay';
 
     // eslint-disable-next-line no-prototype-builtins
     if (options.hasOwnProperty('paymentIntentClientSecret')) {
@@ -311,7 +311,7 @@ export class StripeWeb extends WebPlugin implements StripePlugin {
       requestButton.stripeAccount = this.stripeAccount;
     }
 
-    requestButton.applicationName = '@capgo/capacitor-stripe';
+    requestButton.applicationName = '@capgo/capacitor-stripe-pay';
     return await requestButton.isAvailable(type).finally(() => requestButton.remove());
   }
 
@@ -328,7 +328,7 @@ export class StripeWeb extends WebPlugin implements StripePlugin {
       requestButton.stripeAccount = this.stripeAccount;
     }
 
-    requestButton.applicationName = '@capgo/capacitor-stripe';
+    requestButton.applicationName = '@capgo/capacitor-stripe-pay';
 
     return requestButton;
   }

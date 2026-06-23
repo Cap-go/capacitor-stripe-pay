@@ -1,4 +1,4 @@
-package app.capgo.stripe.googlepay
+package app.capgo.stripe.pay.googlepay
 
 import android.app.Activity
 import android.content.Context
@@ -6,7 +6,7 @@ import androidx.core.util.Supplier
 import com.getcapacitor.Bridge
 import com.getcapacitor.JSObject
 import com.getcapacitor.PluginCall
-import app.capgo.stripe.models.Executor
+import app.capgo.stripe.pay.models.Executor
 import com.google.android.gms.common.util.BiConsumer
 import com.stripe.android.googlepaylauncher.GooglePayLauncher
 

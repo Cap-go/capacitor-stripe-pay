@@ -1,4 +1,4 @@
-package app.capgo.stripe.paymentflow;
+package app.capgo.stripe.pay.paymentflow;
 
 enum class PaymentFlowEvents(val webEventName: String) {
     Loaded("paymentFlowLoaded"),

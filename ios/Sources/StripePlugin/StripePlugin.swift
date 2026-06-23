@@ -49,7 +49,7 @@ public class StripePlugin: CAPPlugin, CAPBridgedPlugin {
             STPAPIClient.shared.stripeAccount = stripeAccount
         }
 
-        STPAPIClient.shared.appInfo = STPAppInfo(name: "@capgo/capacitor-stripe", partnerId: nil, version: nil, url: nil)
+        STPAPIClient.shared.appInfo = STPAppInfo(name: "@capgo/capacitor-stripe-pay", partnerId: nil, version: nil, url: nil)
 
         call.resolve()
     }

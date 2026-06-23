@@ -1,24 +1,85 @@
-<p align="center"><br><a href="https://capgo.app/"><img src="https://raw.githubusercontent.com/Cap-go/capacitor-plugin-template/main/assets/capgo_banner.png" width="128" height="128" /></a></p>
+# @capgo/capacitor-stripe-pay
 
-<h3 align="center">Capgo Stripe Plugin</h3>
-<p align="center"><strong>Official @capgo Capacitor plugin — maintained fork of @capacitor-community/stripe with bug fixes and latest SDK.</strong></p>
+<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-stripe-pay" alt="Capgo - Instant updates for Capacitor" /></a>
 
-# @capgo/capacitor-stripe
+<div align="center">
+  <h2>
+    <a href="https://capgo.app/?ref=plugin_stripe_pay"> ➡️ Get Instant updates for your App with Capgo</a>
+  </h2>
+  <h2>
+    <a href="https://capgo.app/consulting/?ref=plugin_stripe_pay"> Missing a feature? We'll build the plugin for you 💪</a>
+  </h2>
+</div>
 
-Stripe SDK bindings for Capacitor Applications
+Capacitor plugin for Stripe Payment Sheet, Apple Pay, and Google Pay on iOS and Android. Maintained by Capgo with the latest Stripe SDKs and fixes from the community fork.
+
+> **Subscriptions:** For App Store / Play Store subscriptions, use [`@capgo/native-purchases`](https://capgo.app/docs/plugins/native-purchases/) instead of this plugin.
+
+## Documentation
+
+The most complete documentation is available here: https://capgo.app/docs/plugins/stripe-pay/
+
+## Compatibility
+
+| Plugin version | Capacitor compatibility | Maintained |
+| -------------- | ----------------------- | ---------- |
+| v8.\*.\*       | v8.\*.\*                | ✅         |
+| v7.\*.\*       | v7.\*.\*                | On demand  |
+
+> **Note:** The major version of this plugin follows the major version of Capacitor. Use the version that matches your Capacitor installation (e.g., plugin v8 for Capacitor 8). Only the latest major version is actively maintained.
 
 ## Install
 
+You can use our AI-Assisted Setup to install the plugin. Add the Capgo skills to your AI tool using the following command:
+
 ```bash
-npm install @capgo/capacitor-stripe
-npx cap sync
+npx skills add https://github.com/cap-go/capacitor-skills --skill capacitor-plugins
 ```
 
-## How to use
+Then use the following prompt:
 
-Learn at [the official @capgo/capacitor-stripe documentation](https://stripe.capacitorjs.jp/).
+```text
+Use the `capacitor-plugins` skill from `cap-go/capacitor-skills` to install the `@capgo/capacitor-stripe-pay` plugin in my project.
+```
 
-日本語版をご利用の際は [ja.stripe.capacitorjs.jp](https://ja.stripe.capacitorjs.jp/) をご確認ください。
+If you prefer Manual Setup, install the plugin by running the following commands and follow the platform-specific instructions below:
+
+```bash
+# Install (choose one)
+npm install @capgo/capacitor-stripe-pay
+pnpm add @capgo/capacitor-stripe-pay
+yarn add @capgo/capacitor-stripe-pay
+bun add @capgo/capacitor-stripe-pay
+
+# Then sync Capacitor (choose one)
+npx cap sync
+pnpm exec cap sync
+yarn cap sync
+bunx cap sync
+```
+
+## Platform setup
+
+1. Create a [Stripe account](https://dashboard.stripe.com/register) and obtain your publishable key.
+2. On your backend, create PaymentIntents or SetupIntents and return the `clientSecret` to your app.
+3. Call `Stripe.initialize({ publishableKey })` once at app startup before any other Stripe API.
+4. Configure Apple Pay and Google Pay in the Stripe Dashboard and native projects as described in the [Capgo docs](https://capgo.app/docs/plugins/stripe-pay/).
+
+## Usage
+
+```ts
+import { Stripe } from '@capgo/capacitor-stripe-pay';
+
+await Stripe.initialize({ publishableKey: 'pk_test_...' });
+
+await Stripe.createPaymentSheet({
+  paymentIntentClientSecret: 'pi_..._secret_...',
+  merchantDisplayName: 'My Store',
+});
+
+const result = await Stripe.presentPaymentSheet();
+console.log(result.paymentResult);
+```
 
 ## API
 
@@ -79,8 +140,3 @@ iOS Only
 | **`url`** | <code>string</code> |
 
 </docgen-api>
-
-
-## License
-
-@capgo/capacitor-stripe is [MIT licensed](./LICENSE).

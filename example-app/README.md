@@ -1,4 +1,4 @@
-# @capgo/capacitor-stripe Demo
+# @capgo/capacitor-stripe-pay Demo
 
 Exercise Payment Sheet, Apple Pay, and Google Pay flows. Replace publishable key and client secrets with values from your Stripe backend before testing on device.
 

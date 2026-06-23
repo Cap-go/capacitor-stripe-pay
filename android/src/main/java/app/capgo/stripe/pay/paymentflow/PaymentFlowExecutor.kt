@@ -1,4 +1,4 @@
-package app.capgo.stripe.paymentflow
+package app.capgo.stripe.pay.paymentflow
 
 import android.app.Activity
 import android.content.Context
@@ -6,8 +6,8 @@ import androidx.core.util.Supplier
 import com.getcapacitor.Bridge
 import com.getcapacitor.JSObject
 import com.getcapacitor.PluginCall
-import app.capgo.stripe.helper.PaymentSheetHelper
-import app.capgo.stripe.models.Executor
+import app.capgo.stripe.pay.helper.PaymentSheetHelper
+import app.capgo.stripe.pay.models.Executor
 import com.google.android.gms.common.util.BiConsumer
 import com.stripe.android.paymentsheet.PaymentSheet
 import com.stripe.android.paymentsheet.PaymentSheet.PaymentMethodLayout
