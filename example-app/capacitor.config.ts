@@ -4,7 +4,7 @@ import pkg from './package.json';
 
 const config: CapacitorConfig = {
   appId: 'app.capgo.stripe.pay',
-  appName: 'Stripe Pay Example',
+  appName: '@capgo/capacitor-stripe-pay',
   webDir: 'dist',
   plugins: {
     SplashScreen: {
