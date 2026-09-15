@@ -23,9 +23,9 @@ import com.stripe.android.paymentsheet.model.PaymentOption
 @CapacitorPlugin(name = "Stripe")
 class StripePlugin : Plugin() {
     private var publishableKey: String? = null
-    private var paymentSheetCallbackId: String? = null
-    private var paymentFlowCallbackId: String? = null
-    private var googlePayCallbackId: String? = null
+    private var pendingPaymentSheetCall: PluginCall? = null
+    private var pendingPaymentFlowCall: PluginCall? = null
+    private var pendingGooglePayCall: PluginCall? = null
 
     private val identityVerificationCallbackId: String? = null
 
@@ -81,11 +81,8 @@ class StripePlugin : Plugin() {
                 ),
                 { isReady: Boolean -> googlePayExecutor.isAvailable = isReady },
                 { result: GooglePayLauncher.Result ->
-                    googlePayExecutor.onGooglePayResult(
-                        bridge,
-                        googlePayCallbackId,
-                        result
-                    )
+                    googlePayExecutor.onGooglePayResult(pendingGooglePayCall, result)
+                    pendingGooglePayCall = null
                 }
             )
         } else {
@@ -93,16 +90,18 @@ class StripePlugin : Plugin() {
         }
 
         paymentSheetExecutor.paymentSheet = PaymentSheet(activity) { result: PaymentSheetResult ->
-            paymentSheetExecutor.onPaymentSheetResult(bridge, paymentSheetCallbackId, result)
+            paymentSheetExecutor.onPaymentSheetResult(pendingPaymentSheetCall, result)
+            pendingPaymentSheetCall = null
         }
 
         paymentFlowExecutor.flowController = PaymentSheet.FlowController.create(
             activity,
             { paymentOption: PaymentOption? ->
-                paymentFlowExecutor.onPaymentOption(bridge, paymentFlowCallbackId, paymentOption)
+                paymentFlowExecutor.onPaymentOption(pendingPaymentFlowCall, paymentOption)
             },
             { result: PaymentSheetResult ->
-                paymentFlowExecutor.onPaymentFlowResult(bridge, paymentFlowCallbackId, result)
+                paymentFlowExecutor.onPaymentFlowResult(pendingPaymentFlowCall, result)
+                pendingPaymentFlowCall = null
             }
         )
 
@@ -145,8 +144,8 @@ class StripePlugin : Plugin() {
 
     @PluginMethod
     fun presentPaymentSheet(call: PluginCall) {
-        paymentSheetCallbackId = call.callbackId
-        bridge.saveCall(call)
+        call.setKeepAlive(true)
+        pendingPaymentSheetCall = call
 
         paymentSheetExecutor.presentPaymentSheet(call)
     }
@@ -158,16 +157,16 @@ class StripePlugin : Plugin() {
 
     @PluginMethod
     fun presentPaymentFlow(call: PluginCall) {
-        paymentFlowCallbackId = call.callbackId
-        bridge.saveCall(call)
+        call.setKeepAlive(true)
+        pendingPaymentFlowCall = call
 
         paymentFlowExecutor.presentPaymentFlow(call)
     }
 
     @PluginMethod
     fun confirmPaymentFlow(call: PluginCall) {
-        paymentFlowCallbackId = call.callbackId
-        bridge.saveCall(call)
+        call.setKeepAlive(true)
+        pendingPaymentFlowCall = call
 
         paymentFlowExecutor.confirmPaymentFlow(call)
     }
@@ -199,8 +198,8 @@ class StripePlugin : Plugin() {
 
     @PluginMethod
     fun presentGooglePay(call: PluginCall) {
-        googlePayCallbackId = call.callbackId
-        bridge.saveCall(call)
+        call.setKeepAlive(true)
+        pendingGooglePayCall = call
 
         googlePayExecutor.presentGooglePay(call)
     }

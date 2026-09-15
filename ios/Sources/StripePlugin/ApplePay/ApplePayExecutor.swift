@@ -85,7 +85,7 @@ class ApplePayExecutor: NSObject, ApplePayContextDelegate {
             if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: self) {
                 DispatchQueue.main.async {
                     if let rootViewController = self.plugin?.getRootVC() {
-                        self.plugin?.bridge?.saveCall(call)
+                        call.keepAlive = true
                         self.payCallId = call.callbackId
                         applePayContext.presentApplePay(on: rootViewController)
                     }

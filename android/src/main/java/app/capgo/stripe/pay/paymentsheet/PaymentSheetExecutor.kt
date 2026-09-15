@@ -144,11 +144,9 @@ class PaymentSheetExecutor(
     }
 
     fun onPaymentSheetResult(
-        bridge: Bridge,
-        callbackId: String?,
+        call: PluginCall?,
         paymentSheetResult: PaymentSheetResult
     ) {
-        val call = bridge.getSavedCall(callbackId)
         val resultKey = when (paymentSheetResult) {
             is PaymentSheetResult.Canceled -> PaymentSheetEvents.Canceled.webEventName
             is PaymentSheetResult.Failed -> PaymentSheetEvents.Failed.webEventName
@@ -176,6 +174,6 @@ class PaymentSheetExecutor(
         }
 
         call.resolve(JSObject().put("paymentResult", resultKey))
-        bridge.releaseCall(call)
+        call.setKeepAlive(false)
     }
 }

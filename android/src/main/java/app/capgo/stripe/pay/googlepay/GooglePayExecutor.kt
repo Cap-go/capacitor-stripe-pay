@@ -67,8 +67,7 @@ class GooglePayExecutor(
         }
     }
 
-    fun onGooglePayResult(bridge: Bridge, callbackId: String?, result: GooglePayLauncher.Result) {
-        val call = bridge.getSavedCall(callbackId)
+    fun onGooglePayResult(call: PluginCall?, result: GooglePayLauncher.Result) {
         val resultKey = when (result) {
             is GooglePayLauncher.Result.Completed -> GooglePayEvents.Completed.webEventName
             is GooglePayLauncher.Result.Canceled -> GooglePayEvents.Canceled.webEventName
@@ -96,6 +95,6 @@ class GooglePayExecutor(
         }
 
         call.resolve(JSObject().put("paymentResult", resultKey))
-        bridge.releaseCall(call)
+        call.setKeepAlive(false)
     }
 }
