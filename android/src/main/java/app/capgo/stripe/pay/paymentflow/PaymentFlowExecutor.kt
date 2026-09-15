@@ -169,39 +169,36 @@ class PaymentFlowExecutor(
         }
     }
 
-    fun onPaymentOption(bridge: Bridge, callbackId: String?, paymentOption: PaymentOption?) {
-        val call = bridge.getSavedCall(callbackId)
+    fun onPaymentOption(call: PluginCall?, paymentOption: PaymentOption?) {
         if (paymentOption != null) {
             notifyListenersFunction.accept(
                 PaymentFlowEvents.Created.webEventName,
                 JSObject().put("cardNumber", paymentOption.label)
             )
-            call.resolve(JSObject().put("cardNumber", paymentOption.label))
+            call?.resolve(JSObject().put("cardNumber", paymentOption.label))
         } else {
             notifyListenersFunction.accept(PaymentFlowEvents.Canceled.webEventName, emptyObject)
-            call.reject("User close PaymentFlow Sheet")
+            call?.reject("User close PaymentFlow Sheet")
         }
     }
 
     fun onPaymentFlowResult(
-        bridge: Bridge,
-        callbackId: String?,
+        call: PluginCall?,
         paymentSheetResult: PaymentSheetResult
     ) {
-        val call = bridge.getSavedCall(callbackId)
 
         if (paymentSheetResult is PaymentSheetResult.Canceled) {
             notifyListenersFunction.accept(PaymentFlowEvents.Canceled.webEventName, emptyObject)
-            call.resolve(JSObject().put("paymentResult", PaymentFlowEvents.Canceled.webEventName))
+            call?.resolve(JSObject().put("paymentResult", PaymentFlowEvents.Canceled.webEventName))
         } else if (paymentSheetResult is PaymentSheetResult.Failed) {
             notifyListenersFunction.accept(
                 PaymentFlowEvents.Failed.webEventName,
                 JSObject().put("error", (paymentSheetResult).error.localizedMessage)
             )
-            call.resolve(JSObject().put("paymentResult", PaymentFlowEvents.Failed.webEventName))
+            call?.resolve(JSObject().put("paymentResult", PaymentFlowEvents.Failed.webEventName))
         } else if (paymentSheetResult is PaymentSheetResult.Completed) {
             notifyListenersFunction.accept(PaymentFlowEvents.Completed.webEventName, emptyObject)
-            call.resolve(JSObject().put("paymentResult", PaymentFlowEvents.Completed.webEventName))
+            call?.resolve(JSObject().put("paymentResult", PaymentFlowEvents.Completed.webEventName))
         }
     }
 }
