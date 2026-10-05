@@ -6,7 +6,6 @@ ext {
 
     playServicesWalletVersion = project.hasProperty('playServicesWalletVersion') ? rootProject.ext.playServicesWalletVersion : '19.2.+'
     stripeAndroidVersion = project.hasProperty('stripeAndroidVersion') ? rootProject.ext.stripeAndroidVersion : '23.10.+'
-    gsonVersion = project.hasProperty('gsonVersion') ? rootProject.ext.gsonVersion : '2.10.+'
 }
 
 buildscript {
@@ -72,6 +71,5 @@ dependencies {
         exclude group: 'org.bouncycastle', module: 'bcprov-jdk15to18'
     }
 
-    implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.google.android.gms:play-services-wallet:$playServicesWalletVersion"
 }
