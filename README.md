@@ -19,7 +19,7 @@ Take card payments, Apple Pay and Google Pay in your Capacitor app with Stripe's
 
 - **Payment Sheet**: `createPaymentSheet()` and `presentPaymentSheet()` for a complete checkout UI.
 - **Payment Flow**: `createPaymentFlow()`, `presentPaymentFlow()` and `confirmPaymentFlow()` to pick a method first and confirm later.
-- **Apple Pay**: `isApplePayAvailable()`, `createApplePay()`, `presentApplePay()` and `updateApplePaySheet()` (iOS only).
+- **Apple Pay**: `isApplePayAvailable()`, `createApplePay()` and `presentApplePay()`, plus `updateApplePaySheet()` on iOS.
 - **Google Pay**: `isGooglePayAvailable()`, `createGooglePay()` and `presentGooglePay()`.
 - **Events and React**: loaded, completed, canceled and failed listeners, plus a React provider.
 - **Platforms**: iOS, Android and Web. Web uses Stripe.js, with the Payment Request Button for Apple Pay and Google Pay. For store subscriptions, use `@capgo/native-purchases`.
