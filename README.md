@@ -1,15 +1,28 @@
 # @capgo/capacitor-stripe-pay
 
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-stripe-pay" alt="Capgo - Instant updates for Capacitor" /></a>
+Take card payments, Apple Pay and Google Pay in your Capacitor app with Stripe's native Payment Sheet, using the latest Stripe SDKs.
+
+<a href="https://capgo.app/?ref=plugin_stripe_pay"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-stripe-pay" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2>
-    <a href="https://capgo.app/?ref=plugin_stripe_pay"> ➡️ Get Instant updates for your App with Capgo</a>
-  </h2>
-  <h2>
-    <a href="https://capgo.app/consulting/?ref=plugin_stripe_pay"> Missing a feature? We'll build the plugin for you 💪</a>
-  </h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_stripe_pay">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_stripe_pay">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-stripe-pay/main/.github/assets/readme-hero.webp" alt="@capgo/capacitor-stripe-pay for Capacitor apps" width="300" />
+</p>
+
+## Key features
+
+- **Payment Sheet**: `createPaymentSheet()` and `presentPaymentSheet()` for a complete checkout UI.
+- **Payment Flow**: `createPaymentFlow()`, `presentPaymentFlow()` and `confirmPaymentFlow()` to pick a method first and confirm later.
+- **Apple Pay**: `isApplePayAvailable()`, `createApplePay()`, `presentApplePay()` and `updateApplePaySheet()`.
+- **Google Pay**: `isGooglePayAvailable()`, `createGooglePay()` and `presentGooglePay()`.
+- **Events and React**: loaded, completed, canceled and failed listeners, plus a React provider.
+- **Platforms**: iOS, Android and Web. Web uses Stripe.js, with the Payment Request Button for Apple Pay and Google Pay. For store subscriptions, use `@capgo/native-purchases`.
 
 Capacitor plugin for Stripe Payment Sheet, Apple Pay, and Google Pay on iOS and Android. Maintained by Capgo with the latest Stripe SDKs and fixes from the community fork.
 
@@ -17,7 +30,7 @@ Capacitor plugin for Stripe Payment Sheet, Apple Pay, and Google Pay on iOS and 
 
 ## Why this plugin
 
-This plugin is a maintained fork of [@capacitor-community/stripe](https://github.com/capacitor-community/stripe). Capgo split the community project into focused packages — each with its own docs, example app, and CI.
+This plugin is a maintained fork of [@capacitor-community/stripe](https://github.com/capacitor-community/stripe). Capgo split the community project into focused packages, each with its own docs, example app, and CI.
 
 We track open issues and pull requests in the community repository, merge relevant fixes into our repos, and ship them on current Stripe SDKs. Our goal is to be more reactive than the community maintainers when bugs land or platforms change.
 
