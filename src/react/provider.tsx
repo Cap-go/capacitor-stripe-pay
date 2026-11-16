@@ -3,8 +3,8 @@ import type { FC, PropsWithChildren, ReactNode } from "react";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { defineCustomElements } from 'stripe-pwa-elements/loader';
 
-import type { StripePlugin, StripeInitializationOptions, CapacitorStripeContext } from '../index';
-import { Stripe } from '../index';
+import type { StripePlugin, StripeInitializationOptions, CapacitorStripeContext } from '../index.js';
+import { Stripe } from '../index.js';
 
 const StripeContext = createContext<CapacitorStripeContext>({
     stripe: undefined as unknown as StripePlugin,

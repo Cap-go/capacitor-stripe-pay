@@ -1,10 +1,10 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { StripePlugin } from './definitions';
+import type { StripePlugin } from './definitions.js';
 
 const Stripe = registerPlugin<StripePlugin>('Stripe', {
-  web: () => import('./web').then((m) => new m.StripeWeb()),
+  web: () => import('./web.js').then((m) => new m.StripeWeb()),
 });
 
-export * from './definitions';
+export * from './definitions.js';
 export { Stripe };

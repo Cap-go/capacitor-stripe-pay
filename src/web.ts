@@ -15,9 +15,14 @@ import type {
   PaymentSheetResultInterface,
   StripeInitializationOptions,
   StripePlugin,
-} from './definitions';
-import { ApplePayEventsEnum, GooglePayEventsEnum, PaymentFlowEventsEnum, PaymentSheetEventsEnum } from './definitions';
-import { isPlatform } from './shared/platform';
+} from './definitions.js';
+import {
+  ApplePayEventsEnum,
+  GooglePayEventsEnum,
+  PaymentFlowEventsEnum,
+  PaymentSheetEventsEnum,
+} from './definitions.js';
+import { isPlatform } from './shared/platform.js';
 
 interface StripeCardElementModal extends Components.StripeCardElementModal, HTMLStencilElement, HTMLElement {}
 
