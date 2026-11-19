@@ -1,8 +1,8 @@
 import type { PluginListenerHandle } from '@capacitor/core';
 
-import type { CreateGooglePayOption } from '../shared';
+import type { CreateGooglePayOption } from '../shared/index.js';
 
-import type { GooglePayEventsEnum, GooglePayResultInterface } from './google-pay-events.enum';
+import type { GooglePayEventsEnum, GooglePayResultInterface } from './google-pay-events.enum.js';
 
 export interface GooglePayDefinitions {
   isGooglePayAvailable(): Promise<void>;

@@ -1,2 +1,2 @@
-export * from './payment-sheet-events.enum';
-export * from './payment-sheet-definitions.interface';
+export * from './payment-sheet-events.enum.js';
+export * from './payment-sheet-definitions.interface.js';

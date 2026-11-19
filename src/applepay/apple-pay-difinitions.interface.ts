@@ -1,8 +1,8 @@
 import type { PluginListenerHandle } from '@capacitor/core';
 
-import type { CreateApplePayOption, DidSelectShippingContact, PaymentSummaryItem } from '../shared';
+import type { CreateApplePayOption, DidSelectShippingContact, PaymentSummaryItem } from '../shared/index.js';
 
-import type { ApplePayEventsEnum, ApplePayResultInterface } from './apple-pay-events.enum';
+import type { ApplePayEventsEnum, ApplePayResultInterface } from './apple-pay-events.enum.js';
 
 export interface ApplePayDefinitions {
   isApplePayAvailable(): Promise<void>;

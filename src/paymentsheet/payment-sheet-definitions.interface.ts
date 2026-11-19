@@ -1,8 +1,8 @@
 import type { PluginListenerHandle } from '@capacitor/core';
 
-import type { CreatePaymentSheetOption } from '../shared';
+import type { CreatePaymentSheetOption } from '../shared/index.js';
 
-import type { PaymentSheetEventsEnum, PaymentSheetResultInterface } from './payment-sheet-events.enum';
+import type { PaymentSheetEventsEnum, PaymentSheetResultInterface } from './payment-sheet-events.enum.js';
 
 export interface PaymentSheetDefinitions {
   createPaymentSheet(options: CreatePaymentSheetOption): Promise<void>;

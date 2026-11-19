@@ -1,8 +1,8 @@
 import type { PluginListenerHandle } from '@capacitor/core';
 
-import type { CreatePaymentFlowOption } from '../shared';
+import type { CreatePaymentFlowOption } from '../shared/index.js';
 
-import type { PaymentFlowEventsEnum, PaymentFlowResultInterface } from './payment-flow-events.enum';
+import type { PaymentFlowEventsEnum, PaymentFlowResultInterface } from './payment-flow-events.enum.js';
 
 export interface PaymentFlowDefinitions {
   createPaymentFlow(options: CreatePaymentFlowOption): Promise<void>;
